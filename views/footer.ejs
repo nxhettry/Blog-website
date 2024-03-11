@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Concert+One&family=Roboto&family=Roboto+Slab:wght@600&family=Rubik+Doodle+Shadow&family=Rubik+Scribble&display=swap"
+        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Concert+One&family=Roboto&family=Roboto+Slab:wght@600&family=Rubik+Doodle+Shadow&family=Rubik+Scribble&display=swap" rel="stylesheet">
+</head>
+
+<body class="h-screen flex flex-col justify-center items-center">
+    <div class=" bg-foot h-16 flex flex-col items-center justify-center text-white w-screen">
+        <div>Copyright ©️ my_BLOG</div>
+        <div>
+            <% let date = new Date(); %>
+            <% let curDate = date.getDate(); %>
+            <% let curMon = date.getMonth(); %>
+            <% let curYear = date.getFullYear(); %>
+            <%= `${curDate} / ${curMon} / ${curYear}` %>
+        </div>
+    </div>
+</body>
+</html>

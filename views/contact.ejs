@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/utilities.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Concert+One&family=Roboto&family=Roboto+Slab:wght@600&family=Rubik+Doodle+Shadow&family=Rubik+Scribble&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Concert+One&family=Roboto&family=Roboto+Slab:wght@600&family=Rubik+Doodle+Shadow&family=Rubik+Scribble&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="agn">
+
+        <div>
+            <%- include('header.ejs') %>
+        </div>
+
+        <div class="h-screen w-screen flex flex-col items-center">
+            <div class="h-4/6 flex flex-col items-center bg-contact rounded-lg m-auto w-3/5">
+                <h1 class="mt-7 mb-7 ml-0 mr-0 text-3xl text-white">Feel free to Contact Us</h1>
+                <div class="flex flex-col items-center mt-7 mb-7 ml-0 mr-0" action="/submit">
+                    <input class="h-8 w-96 border border-black rounded-lg text-left mt-3 mb-3 ml-0 mr-0 text-lg" type="text" placeholder="Your Name" name="name">
+                    <input class="h-8 w-96 border border-black rounded-lg text-left mt-3 mb-3 ml-0 mr-0 text-lg" type="text" placeholder="Your Contact Number" name="name">
+                    <input class="h-8 w-96 border border-black rounded-lg text-left mt-3 mb-3 ml-0 mr-0 text-lg" type="email" placeholder="Your Email" name="email">
+                    <textarea class="min-h-20 w-96 border border-black rounded-lg text-left mt-3 mb-3 ml-0 mr-0 text-lg max-h-48 max-w-96" type="text" placeholder="How may we help you?"
+                        name="description"></textarea>
+                    <button class="border border-slate-300 bg-white h-8 w-20 rounded-3xl text-base hover:shadow-lg hover:border-none">Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <%- include('footer.ejs') %>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

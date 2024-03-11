@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Concert+One&family=Roboto&family=Roboto+Slab:wght@600&family=Rubik+Doodle+Shadow&family=Rubik+Scribble&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Concert+One&family=Roboto&family=Roboto+Slab:wght@600&family=Rubik+Doodle+Shadow&family=Rubik+Scribble&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="w-screen h-screen">
+    <%- include('header.ejs') %>
+
+        <div class="flex mt-8 mb-8 ml-auto mr-auto p-3 text-black w-4/5 bg-no-repeat bg-cover"
+            style="background-image: url(/images/poster_background.jpg); ">
+            <div class="flex justify-center flex-col p-12">
+                <h1 class="text-3xl">Title</h1>
+                <p class="text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat magni dicta quasi
+                    consectetur
+                    iste!
+                    Doloribus, repellat! Voluptatibus deleniti sint, nam sapiente ipsum architecto beatae mollitia
+                    culpa
+                    nostrum, optio, soluta inventore.
+                </p>
+                <p class="text-xl">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga modi totam dolores hic voluptas
+                    praesentium est nisi libero beatae, exercitationem illo eum sit, aspernatur quasi consectetur
+                    voluptatum, non dolorem explicabo.
+                </p>
+            </div>
+
+            <div class="second">
+                <img src="/images/poster.jpg" alt="poster"
+                    class="h-19 w-40 rounded-full border-2 border-brown hover:border-purple-500">
+            </div>
+
+        </div>
+
+        <hr class="w-4/5 m-auto">
+
+        <div class="mt-7 mr-auto ml-auto mb-0 p-5 bg-mainContent w-4/5">
+            <div class="flex justify-between items-center font-bb">
+                <h2 class="font-bb text-3xl">
+                    Posts
+                </h2>
+                <a class="h-12 w-44 flex justify-center items-center bg-white border-2 rounded-lg border-slate-300 hover:shadow-lg hover:border-purple-400" href="/new" formmethod="post">Create New Post</a>
+
+            </div>
+            <% posts.forEach(post=> { %>
+                <li class="list-none w-8/12 mt-10 mb-10 ml-auto mr-auto bg-white border-none p-4">
+                    <h2 class="text-2xl mt-1 mb-4">
+                        <%=post.title%>
+                    </h2>
+                    <small class="text-opacity-50 mt-4 mb-4">
+                        <%=post.date %>
+                    </small>
+                    <p class="mt-8">
+                        <%=post.content%>
+                    </p>
+                    <div class="flex flex-col ">
+                        <small class="text-sm">By: <%=post.author%> </small>
+                        <div class="flex flex-row gap-4">
+                            <a class="h-8 w-16 border-2 hover:border-purple-400 rounded-xl text-center mt-4 hover:bg-blue-200"
+                                href="/edit/<%= post.id %>">Edit</a>
+                            <a class="h-8 w-16 border-2 hover:border-purple-400 rounded-xl text-center mt-4 hover:bg-red-200"
+                                href="/api/posts/delete/<%= post.id %>">Delete</a>
+                        </div>
+                    </div>
+                </li>
+                <% }); %>
+
+        </div>
+
+        <%- include('footer.ejs') %>
+
+            </div>
+            <script src="index.js"></script>
+</body>
+
+</html>
