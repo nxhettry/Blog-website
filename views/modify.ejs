@@ -21,17 +21,18 @@
 <body class="h-screen w-screen flex flex-col justify-center items-center">
 
   <%- include('header.ejs') %>
+
   <div class="h-full w-3/6 flex flex-col justify-center items-center">
     <h1 class="text-4xl text-slate-400 text font-mono">
       <%= heading %>
     </h1>
 
     <% if (locals.post) { %>
-      <form class="rounded-xl border-2 border-foot w-full h-4/5 bg-mainContent flex flex-col justify-start items-center gap-3 pt-12" id="editForm" method="post" action="/api/posts/<%=post.id%>">
-        <input class="rounded-md hover:border-foot hover:border-2 text-2xl text-center h-16 w-4/5" type="text" name="title" value="<%=post.title %>">
-        <textarea class="rounded-md hover:border-foot hover:border-2 text-3xl text-center h-80 w-4/5" name="content" rows="10"><%=post.content %></textarea>
-        <input class="rounded-md hover:border-foot hover:border-2 text-2xl text-center h-16 w-4/5" type="text" name="author" value="<%=post.author %>">
-        <button class="border-2 border-red-500 wd-16 text-center rounded-xl p-4 bg-white hover:border-2 hover:border-foot hover:shadow-lg" type="submit">
+      <form class="rounded-xl border-2 border-foot w-full h-4/5 bg-mainContent flex flex-col justify-start items-center gap-3 pt-12" id="newPostForm" method="post" action="/api/posts/<%= post.id %>">
+        <input class="rounded-md hover:border-foot hover:border-2 text-2xl text-center h-16 w-4/5" type="text" name="title" placeholder="Title" required value="<%= post.title %>">
+        <textarea class="rounded-md hover:border-foot hover:border-2 text-3xl text-center h-80 w-4/5" name="content" placeholder="Content" required rows="10"><%= post.content %></textarea>
+        <input class="rounded-md hover:border-foot hover:border-2 text-2xl text-center h-16 w-4/5" type="text" name="author" placeholder="Author" required value="<%= post.author %>">
+        <button class="border-2 text-center wd-16 rounded-xl p-4 bg-white hover:border-2 hover:border-foot hover:drop-shadow-lg" type="submit">
           <%= submit %>
         </button>
       </form>
@@ -47,6 +48,7 @@
         <% } %>
 
   </div>
+  
   <%- include('footer.ejs') %>
 
 
